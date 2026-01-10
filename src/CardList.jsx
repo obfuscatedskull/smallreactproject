@@ -1,9 +1,8 @@
 import React from 'react';
 import Card from './Card.jsx'
-import { users } from './assets/users.jsx';
 
 
-const CardList = () => {
+const CardList = ({ users }) => {
     return (
         <>
             <div>
