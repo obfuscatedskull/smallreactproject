@@ -1,0 +1,16 @@
+
+
+
+@font-face {
+    font-family: 'Motel Vacancy Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Motel Vacancy Regular'), url('./assets/Motel\ Vacancy.woff') format('woff');
+}
+
+
+h1 {
+    font-family: 'Motel Vacancy Regular';
+    color:rgb(255, 255, 255);
+    font-weight: lighter
+}
