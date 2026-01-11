@@ -2,16 +2,25 @@ import React from "react";
 import CardList from "./CardList.jsx";
 import SearchBox from "./SearchBox.jsx"
 import './App.css'
-import { users } from "./assets/users.jsx"
 
 
 class App extends React.Component {
     constructor(){
         super();
         this.state = {
-            users: users,
+            user: [],
             search: ''
         }
+    }
+
+
+    componentDidMount(){
+        fetch('https://jsonplaceholder.typicode.com/users').then(response => {
+            return response.json();
+
+        }).then(users => {
+            this.setState({user: users})
+        })
     }
 
 
@@ -20,7 +29,7 @@ class App extends React.Component {
     }
 
     render() {
-        const filteredUsers = this.state.users.filter(user => {
+        const filteredUsers = this.state.user.filter(user => {
             return user.name.toLowerCase().includes(this.state.search.toLowerCase())
         })
 
