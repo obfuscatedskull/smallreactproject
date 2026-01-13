@@ -1,7 +1,8 @@
 import React from "react";
-import CardList from "./CardList.jsx";
-import SearchBox from "./SearchBox.jsx"
-import './App.css'
+import CardList from "../components/CardList.jsx";
+import SearchBox from "../components/SearchBox.jsx";
+import Scroll from '../components/Scroll.jsx';
+import '../css/App.css';
 
 
 class App extends React.Component {
@@ -38,7 +39,9 @@ class App extends React.Component {
                 <div className="tc">
                     <h1 className="f1">Boba's Friends</h1>
                     <SearchBox change={this.searchInputChange}/>
-                    <CardList users={filteredUsers}/>
+                    <Scroll>
+                        <CardList users={filteredUsers}/>
+                    </Scroll>
                 </div>
             </>
         )
